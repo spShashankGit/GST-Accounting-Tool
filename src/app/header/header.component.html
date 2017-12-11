@@ -1,0 +1,21 @@
+<mat-sidenav-container class="example-container" (backdropClick)="close('backdrop')">
+  <mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose>
+    <button mat-button (click)="close('toggle button')">X</button>
+  </mat-sidenav>
+
+  <mat-sidenav-content color="primary">
+    <mat-toolbar color="primary">
+      <mat-toolbar-row [@fadeIn]="reason">
+        <button mat-button (click)="sidenav.open()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span> GST Accounting Software! {{reason}}</span>
+
+        <span class="example-spacer"></span>
+        <button mat-button>About</button>
+        <button mat-button>Services</button>
+        <button mat-button routerLink="/login">Contact</button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </mat-sidenav-content>
+</mat-sidenav-container>
